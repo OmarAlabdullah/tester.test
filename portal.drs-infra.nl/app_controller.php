@@ -4,15 +4,13 @@
 	$controller['layout'] = 'default';
 	$controller['css'][] = 'default.css';
 	$controller['css'][] = 'pagination.css';
-	//$controller['css'][] = 'jquery-datepicker.scss';
 	$controller['js'][] = 'jquery-3.4.1.min.js';
 	$controller['js'][] = 'jquery-ui.min.js';
 	$controller['js'][] = 'scripts.js';
 	$controller['js'][] = 'pagination.js';
 	$controller['js'][] = 'tables.js';
 	$controller['js'][] = 'checkboxes.js';
-	//$controller['js'][] = 'jquery-datepicker.js';
-	
+
 	$title_for_layout = 'DRS Infra';
 	$keywords_for_layout = 'infra';
 	$description_for_layout = 'DRS Infra beschrijving';
