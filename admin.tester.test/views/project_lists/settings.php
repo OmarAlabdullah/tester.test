@@ -71,30 +71,32 @@
 	?>
 		<input class="required_photo" type="text" value="" />
 	</span>
-	
-	<!--
-	<label for="mbo">
-		<input type="checkbox" name="Project_list[mbo]" value="1" id="mbo" <?=($project_list['Project_list']['mbo'] == 1 ? 'checked' : '')?> /> Meterkast binnen oud
-	</label>
-	
-	<label for="mbn">
-		<input type="checkbox" name="Project_list[mbn]" value="1" id="mbn" <?=($project_list['Project_list']['mbn'] == 1 ? 'checked' : '')?> /> Meterkast binnen nieuw
-	</label>
-	
-	<label for="gbo">
-		<input type="checkbox" name="Project_list[gbo]" value="1" id="gbo" <?=($project_list['Project_list']['gbo'] == 1 ? 'checked' : '')?> /> Gaslijn buiten oud
-	</label>
-	
-	<label for="gbn">
-		<input type="checkbox" name="Project_list[gbn]" value="1" id="gbn" <?=($project_list['Project_list']['gbn'] == 1 ? 'checked' : '')?> /> Gaslijn buiten nieuw
-	</label>
-	
-	<label for="dgb">
-		<input type="checkbox" name="Project_list[dgb]" value="1" id="dgb" <?=($project_list['Project_list']['dgb'] == 1 ? 'checked' : '')?> /> Diepte gaslijn buiten
-	</label>
-	-->
+
+
+<!--    /////////////// die heb ik toegevoegd voor additional_data //////////////////////////-->
+    <br /><br />
+
+    <label for="zipcode">
+        Extra gegevens:
+    </label>
+
+    <br />
+
+    <span id="required_photos_holder">
+	<?php
+    foreach($project_list['Project_list']['additional_data_array'] as $additional_data)
+    {
+        ?>
+        <input class="required_photo" type="text" value="<?=$additional_data?>" />
+        <?php
+    }
+    ?>
+		<input class="required_photo" type="text" value="" />
+	</span>
+
 	<br /><br />
-	
+<!--    /////////////////////////////////////////////////////////////////////////////////////////-->
+
 	<label for="zipcode">
 		Ploeg(en):
 	</label>

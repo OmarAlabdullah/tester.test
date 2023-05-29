@@ -322,6 +322,15 @@
 
 				$project_list['Project_list']['required_photos_array'] = $required_photos;
 
+/////////////// die heb ik toegevoegd voor additional_data //////////////////////////
+				$additional_data = explode('|', $project_list['Project_list']['additional_data']);
+				foreach($additional_data as $index => $d)
+					if(empty($d))
+						unset($additional_data[$index]);
+
+				$project_list['Project_list']['additional_data_array'] = $additional_data;
+/////////////////////////////////////////////////////////////////////////////////////////
+
 				$params = array(
 					'crews' => array(
 						'conditions' => array(
