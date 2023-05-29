@@ -1,0 +1,22 @@
+{
+  "short_name": "DRS Infra",
+  "name": "DRS Infra",
+  "icons": [
+   	{
+      "src": "/assets/images/gas-icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/images/gas-icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#FC6D41",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#FC6D41",
+  "orientation": "portrait"
+}

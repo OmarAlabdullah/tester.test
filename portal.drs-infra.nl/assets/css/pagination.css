@@ -1,0 +1,39 @@
+
+.pagination
+{
+	height: 40px;
+	width: 100%;
+	text-align: center;
+}
+.pagination a
+{
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-weight: 700;
+	background: transparent;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	text-decoration: none;
+	font-size: 17px;
+	color: #1f2326;
+}
+.pagination a:hover, .pagination a.selected
+{
+	background-color: #1f2326;
+	color: #ffffff;
+}
+.pagination a[rel="prev"]::before
+{
+	font-family: "Font Awesome 5 Free";
+	content: "\f104";
+}
+.pagination a[rel="next"]::before
+{
+	font-family: "Font Awesome 5 Free";
+	content: "\f105";
+}

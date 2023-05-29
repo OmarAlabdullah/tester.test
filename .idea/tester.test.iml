@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/admin.tester.test" isTestSource="false" packagePrefix="PHPMailer" />
+      <sourceFolder url="file://$MODULE_DIR$/admin.tester.test/lib/classes" isTestSource="false" packagePrefix="PHPMailer" />
+      <sourceFolder url="file://$MODULE_DIR$/admin.tester.test/lib/classes" isTestSource="false" packagePrefix="setasign" />
+      <sourceFolder url="file://$MODULE_DIR$/app.tester.test/lib/classes" isTestSource="false" packagePrefix="PHPMailer" />
+      <sourceFolder url="file://$MODULE_DIR$/httpdocs" isTestSource="false" packagePrefix="PHPMailer" />
+      <sourceFolder url="file://$MODULE_DIR$/httpdocs/lib/classes" isTestSource="false" packagePrefix="PHPMailer" />
+      <sourceFolder url="file://$MODULE_DIR$/portal.drs-infra.nl/lib/classes" isTestSource="false" packagePrefix="setasign" />
+      <sourceFolder url="file://$MODULE_DIR$/portal.drs-infra.nl/lib/classes" isTestSource="false" packagePrefix="PHPMailer" />
+      <excludeFolder url="file://$MODULE_DIR$/.composer/vendor/composer" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

@@ -1,0 +1,12 @@
+
+RewriteEngine on
+
+
+DirectoryIndex index.php
+
+RewriteCond %{REQUEST_URI} !^/(images|images/.*|index.php)$
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ index.php?stift_query_string=$1&stift_get=%{QUERY_STRING} [L]
+RewriteRule ^(.*)/$ index.php?stift_query_string=$1&stift_get=%{QUERY_STRING} [L]

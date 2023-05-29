@@ -1,0 +1,88 @@
+
+@font-face
+{
+	font-family:Roboto;
+	src:url(/assets/fonts/Roboto-Regular.ttf);
+	font-display:swap;
+}
+@font-face
+{
+	font-family:Roboto;
+	src:url(/assets/fonts/Roboto-Medium.ttf);
+	font-display:swap;
+	font-weight: 500;
+}
+@font-face
+{
+	font-family:Roboto;
+	src:url(/assets/fonts/Roboto-Bold.ttf);
+	font-display:swap;
+	font-weight: 900;
+}
+
+body
+{
+	margin: 0;
+	padding: 0;
+	font-family: Roboto, sans-serif;
+	font-size: 15px;
+	color: #333333;
+	min-height: 100vh;
+	text-align: center;
+	background-color: #ffffff;
+	vertical-align: middle;
+	line-height: 100vh;
+}
+::selection
+{
+  background: rgba(100, 100, 100, 0.5);
+}
+.login_holder
+{
+	display: inline-block;
+	width: 80vw;
+	line-height: 30px;
+	vertical-align: middle;
+}
+.login_holder .fas
+{
+	font-size: 27px;
+	color: rgba(0, 0, 0, 0.5);
+}
+.login_holder input
+{
+	width: 100%;
+	max-width: 400px;
+	height: 30px;
+	border-radius: 3px;
+	border: transparent hidden 0px;
+	background-color: rgba(0, 0, 0, 0.05);
+	margin: 5px 0px;
+	box-sizing: border-box;
+	padding: 0px 10px;
+	font-family: Roboto, sans-serif;
+	font-size: 15px;
+	outline: none;
+	color: #333333;
+}
+button
+{
+	width: 100%;
+	max-width: 400px;
+	height: 30px;
+	border-radius: 3px;
+	border: transparent hidden 0px;
+	background-color: #2f7bff;
+	margin: 5px 0px;
+	box-sizing: border-box;
+	padding: 0px 10px;
+	font-family: Roboto, sans-serif;
+	font-size: 15px;
+	outline: none;
+	color: #ffffff;
+}
+.login_holder input::placeholder
+{
+	font-size: 13px;
+	color: #999999;
+}
