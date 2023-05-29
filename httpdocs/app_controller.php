@@ -35,25 +35,7 @@ Heeft u een brief ontvangen waarin wij vragen om uw contactgegevens? Dan starten
 			$meta_image = '';
 		break;
 	}
-	/*
-	if($controller['get']['view'])
-	{
-		cookie('view', 'admin');
-		redirect('/');
-	}
-	
-	if($controller['cookie']['view'] != 'admin')
-	{
-		$controller['restricted'] = array(
-			'/' => 'splash'
-		);
-		$controller['layout'] = null;
-		
-		?>
-		<span style="">drs-infra.nl</span>
-		<?php
-	}
-	*/
+
 	function userLoggedIn()
 	{
 		return false;
