@@ -82,16 +82,16 @@
 
     <br />
 
-    <span id="required_photos_holder">
+    <span id="additional_data_holder">
 	<?php
     foreach($project_list['Project_list']['additional_data_array'] as $additional_data)
     {
         ?>
-        <input class="required_photo" type="text" value="<?=$additional_data?>" />
+        <input class="additional_data" type="text" value="<?=$additional_data?>" />
         <?php
     }
     ?>
-		<input class="required_photo" type="text" value="" />
+		<input class="additional_data" type="text" value="" />
 	</span>
 
 	<br /><br />
@@ -167,6 +167,11 @@ function remove_required_photos_input()
 </script>
 <style>
 input.required_photo
+{
+	display: block;
+	margin-bottom: 5px;
+}
+input.additional_data
 {
 	display: block;
 	margin-bottom: 5px;
