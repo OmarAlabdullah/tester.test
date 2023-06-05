@@ -108,19 +108,9 @@
 					$search_string .= ' AND (street LIKE "%' . $search_word . '%" OR zipcode LIKE "' . $search_word . '" OR city LIKE "%' . $search_word . '%")';
 			}
 			$search_string = '(' . substr($search_string, 5) . ')';
-
-			/*$params = array(
-				'clients' => array(
-					'conditions' => array(
-						'project_list_id' => $project_list['Project_list']['id'],
-						'(archived="0000-00-00 00:00:00")',
-						$search_string
-					),
-					'order' => 'street, (homenumber + 0)'
-				)
-			);*/
 			$params['clients']['conditions'][] = $search_string;
 		}
+
 
 		if(!empty($controller['get']['filter']))
 		{
@@ -130,18 +120,7 @@
 					$params['clients']['conditions'][] = '(send_letter_1 = "" AND send_letter_2 = "" AND send_letter_3 = "")';
 				break;
 				case 'no_contact_details':
-					/*
-					$params = array(
-						'clients' => array(
-							'conditions' => array(
-								'project_list_id' => $project_list['Project_list']['id'],
-								'(archived="0000-00-00 00:00:00")',
-								'(email = "" AND phone = "")'
-							),
-							'order' => 'street, (homenumber + 0)'
-						)
-					);
-					*/
+
 					$params['clients']['conditions'][] = '(email = "" AND phone = "")';
 				break;
 				case 'to_plan':
@@ -358,6 +337,14 @@
 
 				if(post())
 				{
+					/////////////// die heb ik toegevoegd voor additional_data //////////////////////////
+					$additional_data = $controller['post']['Project_list']['additional_data'];
+					$project_list['Project_list']['additional_data'] = $additional_data;
+
+					// Update the project list record in the database
+					$db->update($project_list);
+					///////////////////////////////////////////////////////////////////////////////////
+
 					$required_photos = $controller['post']['required_photo'];
 					foreach($required_photos as $required_photo)
 					{
