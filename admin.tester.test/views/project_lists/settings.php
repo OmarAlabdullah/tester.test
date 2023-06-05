@@ -74,16 +74,14 @@
 
 
 <!--    /////////////// die heb ik toegevoegd voor additional_data //////////////////////////-->
-    <br /><br />
-
-    <label for="zipcode">
+    <label for="additional_data">
         Extra gegevens:
     </label>
 
     <br />
 
     <span id="additional_data_holder">
-	<?php
+    <?php
     foreach($project_list['Project_list']['additional_data_array'] as $additional_data)
     {
         ?>
@@ -91,10 +89,9 @@
         <?php
     }
     ?>
-		<input class="additional_data" type="text" value="" />
-	</span>
+    <input class="additional_data" type="text" value="" />
+</span>
 
-	<br /><br />
 <!--    /////////////////////////////////////////////////////////////////////////////////////////-->
 
 	<label for="zipcode">
@@ -166,52 +163,46 @@ function remove_required_photos_input()
 }
 
 
-
-
 //////////////////////////////die heb ik toegevoegd voor additional_data////////////////////////////////////
-$(document).ready(function()
-{
+$(document).ready(function() {
     check_additional_data_inputs();
     additional_data_inputs_events();
-    $('#project_list_form').submit(function()
-    {
+    $('#project_list_form').submit(function() {
         var i = 0;
-        $('input.additional_data').each(function()
-        {
+        $('input.additional_data').each(function() {
             $(this).attr('name', 'additional_data[' + i + ']');
             i++;
         });
         return true;
     });
 });
-function check_additional_data_inputs()
-{
+
+function check_additional_data_inputs() {
     var last_val = $('input.additional_data').last().val();
     var additional_data_inputs_count = $('input.additional_data').length;
-    if(last_val != '')
-    {
+    if (last_val != '') {
         add_additional_data_input();
-    }else
-    if($($('input.additional_data').get(additional_data_inputs_count-2)).val() == '')
+    } else if ($($('input.additional_data').get(additional_data_inputs_count - 2)).val() == '') {
         remove_additional_data_input();
+    }
 }
-function add_additional_data_input()
-{
+
+function add_additional_data_input() {
     $('#additional_data_holder').append('<input class="additional_data" type="text" value="" />');
     additional_data_inputs_events();
 }
-function additional_data_inputs_events()
-{
+
+function additional_data_inputs_events() {
     $('input.additional_data').unbind('keyup');
-    $('input.additional_data').keyup(function()
-    {
+    $('input.additional_data').keyup(function() {
         check_additional_data_inputs();
     });
 }
-function remove_additional_data_input()
-{
+
+function remove_additional_data_input() {
     $('input.additional_data').last().remove();
 }
+
 
 
 </script>
@@ -221,9 +212,9 @@ input.required_photo
 	display: block;
 	margin-bottom: 5px;
 }
-input.additional_data
-{
-	display: block;
-	margin-bottom: 5px;
+input.additional_data {
+    display: block;
+    margin-bottom: 5px;
 }
+
 </style>

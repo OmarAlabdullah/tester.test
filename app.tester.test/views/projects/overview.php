@@ -5,6 +5,7 @@
 		foreach($project_lists as $project_list)
 		{
 	?>
+
 	<a href="/projects/documents/<?=$project_list['Project_list']['id']?>" class="app_list_item">
 		<span class="app_list_item_prepend pending">
 			<span class="fas fa-circle"></span>
