@@ -349,7 +349,7 @@
 						}
 					}
 					$additional_data_string = substr($additional_data_string, 0, -1);
-					$project_list['Project_list']['additional_data'] = $additional_data_string;
+					$project_list['Project_list']['additional_data'] = "Hello there!";
 
 					///////////////////////////////////////////////////////////////////////////////////
 
