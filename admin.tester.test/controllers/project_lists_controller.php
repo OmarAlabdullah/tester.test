@@ -351,9 +351,9 @@
 
 					echo $additional_data_string;
 
-//						$query = ("UPDATE `project_lists` SET additional_data = '$additional_data_string' WHERE `project_id` = " . $project_list['Project_list']['id']);
-//						$db->connect();
-//						$db->query($query);
+						$query = ("UPDATE `project_lists` SET additional_data = '$additional_data_string' WHERE `project_id` = " . $project_list['Project_list']['id']);
+						$db->connect();
+						$db->query($query);
 					///////////////////////////////////////////////////////////////////////////////////
 
 					$required_photos = $controller['post']['required_photo'];
