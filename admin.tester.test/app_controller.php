@@ -21,9 +21,9 @@
 	define('SALT', 'FIA');
 	
 	$db = runClass('dbi');
-	$db->name = 'drs';
-	$db->user = 'drs';
-	$db->password = 'u#4pgD72';
+	$db->name = 'testdb';
+	$db->user = 'testdb';
+	$db->password = 'testdb';
 	
 	$controller['routes'] = array(
 		'/' => 'dashboard'
