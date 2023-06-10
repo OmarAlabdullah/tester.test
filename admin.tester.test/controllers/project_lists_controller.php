@@ -342,7 +342,6 @@
 
 
 					$additional_data_string = implode('|', array_filter(array_map('trim', $additional_data)));
-					echo $additional_data_string;
 					$additional_data_string = $db->real_escape_string($additional_data_string); // Escape the string to prevent SQL injection
 					try {
 
@@ -351,6 +350,8 @@
 						$db->connect();
 
 						$db->query($query);
+						echo $additional_data_string;
+
 					}catch (Error $e){
 						echo $e;
 				}
