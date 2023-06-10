@@ -339,6 +339,7 @@
 				{
 					/////////////// die heb ik toegevoegd voor additional_data //////////////////////////
 					$additional_data = $controller['post']['additional_data'];
+					echo $additional_data;
 					foreach($additional_data as $d)
 					{
 						$d = trim($d);
