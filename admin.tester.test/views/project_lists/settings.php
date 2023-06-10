@@ -63,7 +63,7 @@
 	<span id="required_photos_holder">
 	<?php
 		foreach($project_list['Project_list']['required_photos_array'] as $required_photo)
-        echo $required_photo;
+//        echo $required_photo;
 		{
 	?>
 		<input class="required_photo" type="text" value="<?=$required_photo?>" />
