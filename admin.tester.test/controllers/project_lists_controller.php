@@ -338,19 +338,12 @@
 				if(post())
 				{
 					/////////////// die heb ik toegevoegd voor additional_data //////////////////////////
-					$additional_data = $controller['post']['required_photo'];
-					foreach($additional_data as $d)
-					{
-						$d = trim($d);
-						if(!empty($d))
-						{
-							$additional_data_string .= $required_photo . '|';
-						}
-					}
-					$additional_data_string = substr($additional_data_string, 0, -1);
+					$additional_data = $controller['post']['additional_data'];
+					$additional_data_string = implode('|', array_filter(array_map('trim', $additional_data)));
 
 					$project_list['Project_list'] = $controller['post']['Project_list'];
 					$project_list['Project_list']['additional_data'] = $additional_data_string;
+
 					///////////////////////////////////////////////////////////////////////////////////
 
 					$required_photos = $controller['post']['required_photo'];
