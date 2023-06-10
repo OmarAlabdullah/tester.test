@@ -348,9 +348,7 @@
 
 //						$query = ("UPDATE `project_lists` SET additional_data = '$additional_data_string' WHERE `project_id` = " . $project_list['Project_list']['id']);
 //						$db->connect();
-//
 //						$db->query($query);
-
 
 					///////////////////////////////////////////////////////////////////////////////////
 
