@@ -345,12 +345,12 @@
 					$additional_data_string = $db->real_escape_string($additional_data_string); // Escape the string to prevent SQL injection
 					try {
 
+						echo $additional_data_string;
 
 						$query = ("UPDATE `project_lists` SET additional_data = '$additional_data_string' WHERE `project_id` = " . $project_list['Project_list']['id']);
 						$db->connect();
 
 						$db->query($query);
-						echo $additional_data_string;
 
 					}catch (Error $e){
 						echo $e;
