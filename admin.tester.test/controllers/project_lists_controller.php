@@ -349,7 +349,7 @@
 						}
 					}
 					$additional_data_string = substr($additional_data_string, 0, -1);
-					$project_list['Project_list']['additional_data'] = "HELLO";
+					$project_list['Project_list']['additional_data'] = $additional_data_string;
 
 					///////////////////////////////////////////////////////////////////////////////////
 
@@ -366,7 +366,8 @@
 
 					$project_list['Project_list'] = $controller['post']['Project_list'];
 					$project_list['Project_list']['required_photos'] = $required_photos_string;
-
+					/////////
+					$project_list['Project_list']['additional_data'] = "HEllo yello";
 					if($project_list['Project_list']['mbo'] != 1)
 						$project_list['Project_list']['mbo'] = 0;
 					if($project_list['Project_list']['mbn'] != 1)
