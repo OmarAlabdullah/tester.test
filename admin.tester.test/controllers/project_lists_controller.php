@@ -351,8 +351,9 @@
 					$additional_data_string = substr($additional_data_string, 0, -1);
 
 					echo $additional_data_string;
+						$projectListId = $project_list['Project_list']['id'] ;
 
-						$query = ("UPDATE `project_lists` SET additional_data = '$additional_data_string' WHERE `project_id` = " . $project_list['Project_list']['id']);
+						$query = ("UPDATE project_lists SET additional_data = '$additional_data_string' WHERE `project_id` =  '$projectListId'");
 						$db->connect();
 						$db->query($query);
 					///////////////////////////////////////////////////////////////////////////////////
