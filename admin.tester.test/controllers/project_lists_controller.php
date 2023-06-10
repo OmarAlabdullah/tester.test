@@ -339,10 +339,15 @@
 				{
 					/////////////// die heb ik toegevoegd voor additional_data //////////////////////////
 					$additional_data = $controller['post']['additional_data'];
-					$additional_data_string = implode('|', array_filter(array_map('trim', $additional_data)));
+					echo $additional_data;
 
-					$project_list['Project_list'] = $controller['post']['Project_list'];
-					$project_list['Project_list']['additional_data'] = $additional_data_string;
+					$additional_data_string = implode('|', array_filter(array_map('trim', $additional_data)));
+					$additional_data_string = $db->real_escape_string($additional_data_string); // Escape the string to prevent SQL injection
+
+					$query = "UPDATE `project_lists` SET additional_data = '$additional_data_string' WHERE `project_id` = " . $project_list['Project_list']['id'];
+					$db->connect();
+
+					$db->query($query);
 
 					///////////////////////////////////////////////////////////////////////////////////
 
