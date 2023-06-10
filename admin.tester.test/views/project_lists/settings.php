@@ -1,83 +1,82 @@
+
 <div class="tabs">
-    <!-- Tab 1: Adressen -->
-    <a href="/project_lists/details/<?=$project_list['Project_list']['id']?>">
-        <span class="far fa-address-card"></span>
-        <br />
-        Adressen
-    </a>
-
-    <!-- Tab 2: Instellingen (selected) -->
-    <a class="selected" href="/project_lists/settings/<?=$project_list['Project_list']['id']?>">
-        <span class="fas fa-cog"></span>
-        <br />
-        Instellingen
-    </a>
-
-    <!-- Tab 3: Documenten -->
-    <a href="/project_lists/documents/<?=$project_list['Project_list']['id']?>">
-        <span class="fas fa-file-alt"></span>
-        <br />
-        Documenten
-    </a>
+	<a href="/project_lists/details/<?=$project_list['Project_list']['id']?>">
+		<span class="far fa-address-card"></span>
+		<br />
+		Adressen
+	</a>
+	<a class="selected" href="/project_lists/settings/<?=$project_list['Project_list']['id']?>">
+		<span class="fas fa-cog"></span>
+		<br />
+		Instellingen
+	</a>
+	<a href="/project_lists/documents/<?=$project_list['Project_list']['id']?>">
+		<span class="fas fa-file-alt"></span>
+		<br />
+		Documenten
+	</a>
 </div>
 
 <h1>Instellingen</h1>
 <h5><?=$project_list['Project_list']['name']?></h5>
-
-<!-- Commented section -->
 <!--
 <div class="page_actions">
-  <a class="btn" href="/project_lists/details/<?=$project_list['Project_list']['id']?>">
-    <span class="fas fa-arrow-alt-circle-left"></span>
-    Terug naar overzicht
-  </a>
+	<a class="btn" href="/project_lists/details/<?=$project_list['Project_list']['id']?>"><span class="fas fa-arrow-alt-circle-left"></span>Terug naar overzicht</a>
 </div>
 -->
 
 <br /><br />
 
 <form method="post" action="<?=SELF?>" id="project_list_form">
-    <!-- Projectnaam field -->
-    <label for="zipcode">Projectnaam:</label>
-    <input type="text" id="zipcode" name="Project_list[name]" placeholder="Postcode" value="<?=$project_list['Project_list']['name']?>" autocomplete="">
 
-    <br /><br />
+	<label for="zipcode">
+		Projectnaam:
+	</label>
+	<input type="text" id="zipcode" name="Project_list[name]" placeholder="Postcode" value="<?=$project_list['Project_list']['name']?>" autocomplete="">
 
-    <!-- Projectnummer field -->
-    <label for="zipcode">Projectnummer:</label>
-    <input type="text" id="zipcode" name="Project_list[project_number]" placeholder="Postcode" value="<?=$project_list['Project_list']['project_number']?>" autocomplete="">
+	<br /><br />
 
-    <br /><br />
+	<label for="zipcode">
+		Projectnummer:
+	</label>
+	<input type="text" id="zipcode" name="Project_list[project_number]" placeholder="Postcode" value="<?=$project_list['Project_list']['project_number']?>" autocomplete="">
 
-    <!-- Status field -->
-    <label for="status">Status:</label>
-    <select id="status" name="Project_list[status]" autocomplete="">
-        <option value="open" <?=($project_list['Project_list']['status'] == 'open' ? 'selected' : '')?>>Openstaand</option>
-        <option value="finished" <?=($project_list['Project_list']['status'] == 'finished' ? 'selected' : '')?>>Afgerond</option>
-        <option value="special" <?=($project_list['Project_list']['status'] == 'special' ? 'selected' : '')?>>Bijzonderheden</option>
-    </select>
+	<br /><br />
 
-    <br /><br />
+	<label for="status">
+		Status:
+	</label>
+	<select id="status" name="Project_list[status]" autocomplete="">
+		<option value="open" <?=($project_list['Project_list']['status'] == 'open' ? 'selected' : '')?>>Openstaand</option>
+		<option value="finished" <?=($project_list['Project_list']['status'] == 'finished' ? 'selected' : '')?>>Afgerond</option>
+		<option value="special" <?=($project_list['Project_list']['status'] == 'special' ? 'selected' : '')?>>Bijzonderheden</option>
+	</select>
 
-    <!-- Verplichte fotos field -->
-    <label for="zipcode">Verplichte fotos:</label>
+	<br /><br />
 
-    <br />
+	<label for="zipcode">
+		Verplichte fotos:
+	</label>
 
-    <span id="required_photos_holder">
-    <?php
-    foreach($project_list['Project_list']['required_photos_array'] as $required_photo)
-    {
-        ?>
-        <input class="required_photo" type="text" value="<?=$required_photo?>" />
-        <?php
-    }
-    ?>
-    <input class="required_photo" type="text" value="" />
-  </span>
+	<br />
 
-    <!-- Additional data field -->
-    <label for="additional_data">Extra gegevens:</label>
+	<span id="required_photos_holder">
+	<?php
+		foreach($project_list['Project_list']['required_photos_array'] as $required_photo)
+		{
+	?>
+		<input class="required_photo" type="text" value="<?=$required_photo?>" />
+	<?php
+		}
+	?>
+		<input class="required_photo" type="text" value="" />
+	</span>
+
+
+<!--    /////////////// die heb ik toegevoegd voor additional_data //////////////////////////-->
+    <label for="zipcode">
+        Extra gegevens:
+    </label>
 
     <br />
 
@@ -91,30 +90,32 @@
     }
     ?>
     <input class="additional_data" type="text" value="" />
-  </span>
+</span>
 
-    <!-- Ploeg(en) field -->
-    <label for="zipcode">Ploeg(en):</label>
+<!--    /////////////////////////////////////////////////////////////////////////////////////////-->
 
-    <br />
+	<label for="zipcode">
+		Ploeg(en):
+	</label>
 
-    <?php
-    foreach($crews as $crew)
-    {
-        ?>
-        <label for="crew_<?=$crew['Crew']['id']?>">
-            <input type="checkbox" name="crews[<?=$crew['Crew']['id']?>]" value="<?=$crew['Crew']['id']?>" id="crew_<?=$crew['Crew']['id']?>" <?=(isset($project_list['crews'][$crew['Crew']['id']]) ? 'checked' : '')?> /> <?=$crew['Crew']['name']?>
-        </label>
-        <?php
-    }
-    ?>
+	<br />
 
-    <br /><br />
+	<?php
+		foreach($crews as $crew)
+		{
+	?>
+	<label for="crew_<?=$crew['Crew']['id']?>">
+		<input type="checkbox" name="crews[<?=$crew['Crew']['id']?>]" value="<?=$crew['Crew']['id']?>" id="crew_<?=$crew['Crew']['id']?>" <?=(isset($project_list['crews'][$crew['Crew']['id']]) ? 'checked' : '')?> /> <?=$crew['Crew']['name']?>
+	</label>
+	<?php
+		}
+	?>
 
-    <!-- Submit button -->
-    <input type="submit" value="Opslaan" />
+	<br /><br />
+
+	<input type="submit" value="Opslaan" />
+
 </form>
-
 
 <script>
 $(document).ready(function()
