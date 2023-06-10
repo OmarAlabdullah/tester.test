@@ -164,43 +164,45 @@ function remove_required_photos_input()
 
 
 //////////////////////////////die heb ik toegevoegd voor additional_data////////////////////////////////////
-$(document).ready(function() {
+    $(document).ready(function() {
     check_additional_data_inputs();
     additional_data_inputs_events();
     $('#project_list_form').submit(function() {
-        var i = 0;
-        $('input.additional_data').each(function() {
-            $(this).attr('name', 'additional_data[' + i + ']');
-            i++;
-        });
-        return true;
-    });
+    var i = 0;
+    $('input.additional_data').each(function() {
+    $(this).attr('name', 'additional_data[' + i + ']');
+    i++;
+});
+    return true;
+});
 });
 
-function check_additional_data_inputs() {
+    function check_additional_data_inputs() {
     var last_val = $('input.additional_data').last().val();
     var additional_data_inputs_count = $('input.additional_data').length;
     if (last_val != '') {
-        add_additional_data_input();
-    } else if ($($('input.additional_data').get(additional_data_inputs_count - 2)).val() == '') {
-        remove_additional_data_input();
-    }
+    add_additional_data_input();
+} else if ($($('input.additional_data').get(additional_data_inputs_count - 2)).val() == '') {
+    remove_additional_data_input();
+}
 }
 
-function add_additional_data_input() {
+    function add_additional_data_input() {
     $('#additional_data_holder').append('<input class="additional_data" type="text" value="" />');
     additional_data_inputs_events();
 }
 
-function additional_data_inputs_events() {
+    function additional_data_inputs_events() {
     $('input.additional_data').unbind('keyup');
     $('input.additional_data').keyup(function() {
-        check_additional_data_inputs();
-    });
+    check_additional_data_inputs();
+});
 }
 
-function remove_additional_data_input() {
+    function remove_additional_data_input() {
+    if ($('input.additional_data').length > 1) {
     $('input.additional_data').last().remove();
+}
 }
 
 
