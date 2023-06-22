@@ -18,10 +18,8 @@
     {
 
         ?>
-        <a rel="<?=strtolower($d)?>" class="app_list_item photo_type <?=($got_photos[strtolower($d)] > 0 ? 'ghosted' : '')?>">
-		<span class="app_list_item_prepend">
-			<span class="far fa-dot-circle"></span>
-		</span>
+        <a >
+
             <?=$d?>
         </a>
         <?php
