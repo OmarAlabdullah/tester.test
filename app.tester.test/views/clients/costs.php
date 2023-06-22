@@ -18,7 +18,9 @@
         ?>
 
         <a class="app_list_item">
-           Dit is d:  <?=$d?>
+           Dit is d1:  <?=$project_list['Project_list']['required_additional_data'][strtolower($d)]  == 1 ? 'checked' : ''?>
+           Dit is d2:  <?=$project_list['Project_list']['required_additional_data']?>
+           Dit is d3:  <?=$project_list['Project_list']['required_additional_data'][1]  == 1 ? 'checked' : ''?>
             <span class="app_list_item_append">
 			<span class="app_list_item_checkbox <?=($project_list['Project_list']['required_additional_data'][strtolower($d)]  == 1 ? 'checked' : '')?>" id="mw">
 			<span class="app_list_item_checkbox <?=($project_list['Project_list']['required_additional_data'][1]  == 1 ? 'checked' : '')?>" id="mw">
