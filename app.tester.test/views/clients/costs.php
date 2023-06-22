@@ -7,8 +7,9 @@
 			<span class="app_list_item_checkbox <?=($project_list['Project_list']['required_additional_data'])?>" id="gs">
 				<span class="app_list_item_checkbox_cursor"></span>
 			</span>
-            <?=($project_list['Project_list']['required_additional_data'])?>
+
 		</span>
+        <?=($project_list['Project_list']['required_additional_data'])?>
 	</a>
 
     <?php
