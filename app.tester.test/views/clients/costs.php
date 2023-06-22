@@ -2,7 +2,7 @@
 <div class="app_list">
 
 	<a class="app_list_item">
-		test
+		test: <?=($project_list['Project_list']['required_additional_data'])?>
 		<span class="app_list_item_append">
 			<span class="app_list_item_checkbox <?=($project_list['Project_list']['required_additional_data'])?>" id="gs">
 				<span class="app_list_item_checkbox_cursor"></span>
