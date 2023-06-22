@@ -14,10 +14,7 @@
         {
 
             ?>
-            <a rel="<?=strtolower($required_photo)?>" class="app_list_item photo_type <?=($got_photos[strtolower($required_photo)] > 0 ? 'ghosted' : '')?>">
-		<span class="app_list_item_prepend">
-			<span class="far fa-dot-circle"></span>
-		</span>
+            <a class="app_list_item">
                 <?=$required_photo?>
             </a>
             <?php
