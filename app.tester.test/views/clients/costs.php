@@ -4,23 +4,29 @@
 	<a class="app_list_item">
 		Gasstopper
 		<span class="app_list_item_append">
-			<span class="app_list_item_checkbox <?=($client['Client']['gas_stop'] == 1 ? 'checked' : '')?>" id="gs">
+			<span class="app_list_item_checkbox <?=($project_list['Project_list']['required_additional_data'])?>" id="gs">
 				<span class="app_list_item_checkbox_cursor"></span>
 			</span>
+            <?=($project_list['Project_list']['required_additional_data'])?>
 		</span>
 	</a>
 
     <?php
-    $required_photos = explode('|', $project_list['Project_list']['required_photos']);
-    foreach($required_photos as $required_photo)
+    $required_additional_data = explode('|', $project_list['Project_list']['required_additional_data']);
+    foreach($required_additional_data as $d)
     {
 
         ?>
-        <a rel="<?=strtolower($required_photo)?>" class="app_list_item" <?=($got_photos[strtolower($required_photo)] > 0 ? 'ghosted' : '')?>" >
-		<span class="app_list_item_checkbox" id="gs">
+        <a rel="<?=strtolower($d)?>" class="app_list_item photo_type <?=($got_additional_data[strtolower($d)] > 0 ? 'ghosted' : '')?>">
+		<span class="app_list_item_prepend">
+			<span class="far fa-dot-circle"></span>
 		</span>
-            <?=$required_photo?>
+            <?=$d?>
         </a>
+
+
+
+
         <?php
     }
     ?>
