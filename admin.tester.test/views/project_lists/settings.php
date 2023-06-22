@@ -1,20 +1,20 @@
 
 <div class="tabs">
-	<a href="/project_lists/details/<?=$project_list['Project_list']['id']?>">
-		<span class="far fa-address-card"></span>
-		<br />
-		Adressen
-	</a>
-	<a class="selected" href="/project_lists/settings/<?=$project_list['Project_list']['id']?>">
-		<span class="fas fa-cog"></span>
-		<br />
-		Instellingen
-	</a>
-	<a href="/project_lists/documents/<?=$project_list['Project_list']['id']?>">
-		<span class="fas fa-file-alt"></span>
-		<br />
-		Documenten
-	</a>
+    <a href="/project_lists/details/<?=$project_list['Project_list']['id']?>">
+        <span class="far fa-address-card"></span>
+        <br />
+        Adressen
+    </a>
+    <a class="selected" href="/project_lists/settings/<?=$project_list['Project_list']['id']?>">
+        <span class="fas fa-cog"></span>
+        <br />
+        Instellingen
+    </a>
+    <a href="/project_lists/documents/<?=$project_list['Project_list']['id']?>">
+        <span class="fas fa-file-alt"></span>
+        <br />
+        Documenten
+    </a>
 </div>
 
 <h1>Instellingen</h1>
@@ -29,194 +29,194 @@
 
 <form method="post" action="<?=SELF?>" id="project_list_form">
 
-	<label for="zipcode">
-		Projectnaam:
-	</label>
-	<input type="text" id="zipcode" name="Project_list[name]" placeholder="Postcode" value="<?=$project_list['Project_list']['name']?>" autocomplete="">
+    <label for="zipcode">
+        Projectnaam:
+    </label>
+    <input type="text" id="zipcode" name="Project_list[name]" placeholder="Postcode" value="<?=$project_list['Project_list']['name']?>" autocomplete="">
 
-	<br /><br />
+    <br /><br />
 
-	<label for="zipcode">
-		Projectnummer:
-	</label>
-	<input type="text" id="zipcode" name="Project_list[project_number]" placeholder="Postcode" value="<?=$project_list['Project_list']['project_number']?>" autocomplete="">
+    <label for="zipcode">
+        Projectnummer:
+    </label>
+    <input type="text" id="zipcode" name="Project_list[project_number]" placeholder="Postcode" value="<?=$project_list['Project_list']['project_number']?>" autocomplete="">
 
-	<br /><br />
+    <br /><br />
 
-	<label for="status">
-		Status:
-	</label>
-	<select id="status" name="Project_list[status]" autocomplete="">
-		<option value="open" <?=($project_list['Project_list']['status'] == 'open' ? 'selected' : '')?>>Openstaand</option>
-		<option value="finished" <?=($project_list['Project_list']['status'] == 'finished' ? 'selected' : '')?>>Afgerond</option>
-		<option value="special" <?=($project_list['Project_list']['status'] == 'special' ? 'selected' : '')?>>Bijzonderheden</option>
-	</select>
+    <label for="status">
+        Status:
+    </label>
+    <select id="status" name="Project_list[status]" autocomplete="">
+        <option value="open" <?=($project_list['Project_list']['status'] == 'open' ? 'selected' : '')?>>Openstaand</option>
+        <option value="finished" <?=($project_list['Project_list']['status'] == 'finished' ? 'selected' : '')?>>Afgerond</option>
+        <option value="special" <?=($project_list['Project_list']['status'] == 'special' ? 'selected' : '')?>>Bijzonderheden</option>
+    </select>
 
-	<br /><br />
+    <br /><br />
 
-	<label for="zipcode">
-		Verplichte fotos:
-	</label>
+    <label for="zipcode">
+        Verplichte fotos:
+    </label>
 
-	<br />
+    <br />
 
-	<span id="required_photos_holder">
+    <span id="required_photos_holder">
 	<?php
-		foreach($project_list['Project_list']['required_photos_array'] as $required_photo)
-		{
-	?>
-		<input class="required_photo" type="text" value="<?=$required_photo?>" />
-	<?php
-		}
-	?>
+    foreach($project_list['Project_list']['required_photos_array'] as $required_photo)
+    {
+        ?>
+        <input class="required_photo" type="text" value="<?=$required_photo?>" />
+        <?php
+    }
+    ?>
 		<input class="required_photo" type="text" value="" />
 	</span>
 
 
-<!--    /////////////// die heb ik toegevoegd voor additional_data //////////////////////////-->
+    <!--    /////////////// die heb ik toegevoegd voor required_additional_data //////////////////////////-->
     <label for="zipcode">
         Extra gegevens:
     </label>
 
     <br />
 
-    <span id="additional_data_holder">
+    <span id="required_additional_data_holder">
     <?php
-    foreach($project_list['Project_list']['additional_data_array'] as $additional_data)
+    foreach($project_list['Project_list']['required_additional_data_array'] as $required_additional_data)
     {
         ?>
-        <input class="additional_data" type="text" value="<?=$additional_data?>" />
+        <input class="required_additional_data" type="text" value="<?=$required_additional_data?>" />
         <?php
     }
     ?>
-    <input class="additional_data" type="text" value="" />
+    <input class="required_additional_data" type="text" value="" />
 </span>
 
-<!--    /////////////////////////////////////////////////////////////////////////////////////////-->
+    <!--    /////////////////////////////////////////////////////////////////////////////////////////-->
 
-	<label for="zipcode">
-		Ploeg(en):
-	</label>
+    <label for="zipcode">
+        Ploeg(en):
+    </label>
 
-	<br />
+    <br />
 
-	<?php
-		foreach($crews as $crew)
-		{
-	?>
-	<label for="crew_<?=$crew['Crew']['id']?>">
-		<input type="checkbox" name="crews[<?=$crew['Crew']['id']?>]" value="<?=$crew['Crew']['id']?>" id="crew_<?=$crew['Crew']['id']?>" <?=(isset($project_list['crews'][$crew['Crew']['id']]) ? 'checked' : '')?> /> <?=$crew['Crew']['name']?>
-	</label>
-	<?php
-		}
-	?>
+    <?php
+    foreach($crews as $crew)
+    {
+        ?>
+        <label for="crew_<?=$crew['Crew']['id']?>">
+            <input type="checkbox" name="crews[<?=$crew['Crew']['id']?>]" value="<?=$crew['Crew']['id']?>" id="crew_<?=$crew['Crew']['id']?>" <?=(isset($project_list['crews'][$crew['Crew']['id']]) ? 'checked' : '')?> /> <?=$crew['Crew']['name']?>
+        </label>
+        <?php
+    }
+    ?>
 
-	<br /><br />
+    <br /><br />
 
-	<input type="submit" value="Opslaan" />
+    <input type="submit" value="Opslaan" />
 
 </form>
 
 <script>
-$(document).ready(function()
-{
-	check_required_photos_inputs();
-	required_photos_inputs_events();
-	$('#project_list_form').submit(function()
-	{
-		var i = 0;
-		$('input.required_photo').each(function()
-		{
-			$(this).attr('name', 'required_photo[' + i + ']');
-			i++;
-		});
-		return true;
-	});
-});
-function check_required_photos_inputs()
-{
-	var last_val = $('input.required_photo').last().val();
-	var required_photos_inputs_count = $('input.required_photo').length;
-	if(last_val != '')
-	{
-			add_required_photos_input();
-	}else
-		if($($('input.required_photo').get(required_photos_inputs_count-2)).val() == '')
-			remove_required_photos_input();
-}
-function add_required_photos_input()
-{
-	$('#required_photos_holder').append('<input class="required_photo" type="text" value="" />');
-	required_photos_inputs_events();
-}
-function required_photos_inputs_events()
-{
-	$('input.required_photo').unbind('keyup');
-	$('input.required_photo').keyup(function()
-	{
-		check_required_photos_inputs();
-	});
-}
-function remove_required_photos_input()
-{
-	$('input.required_photo').last().remove();
-}
+    $(document).ready(function()
+    {
+        check_required_photos_inputs();
+        required_photos_inputs_events();
+        $('#project_list_form').submit(function()
+        {
+            var i = 0;
+            $('input.required_photo').each(function()
+            {
+                $(this).attr('name', 'required_photo[' + i + ']');
+                i++;
+            });
+            return true;
+        });
+    });
+    function check_required_photos_inputs()
+    {
+        var last_val = $('input.required_photo').last().val();
+        var required_photos_inputs_count = $('input.required_photo').length;
+        if(last_val != '')
+        {
+            add_required_photos_input();
+        }else
+        if($($('input.required_photo').get(required_photos_inputs_count-2)).val() == '')
+            remove_required_photos_input();
+    }
+    function add_required_photos_input()
+    {
+        $('#required_photos_holder').append('<input class="required_photo" type="text" value="" />');
+        required_photos_inputs_events();
+    }
+    function required_photos_inputs_events()
+    {
+        $('input.required_photo').unbind('keyup');
+        $('input.required_photo').keyup(function()
+        {
+            check_required_photos_inputs();
+        });
+    }
+    function remove_required_photos_input()
+    {
+        $('input.required_photo').last().remove();
+    }
 
 
-//////////////////////////////die heb ik toegevoegd voor additional_data////////////////////////////////////
+    //////////////////////////////die heb ik toegevoegd voor required_additional_data////////////////////////////////////
     $(document).ready(function() {
-    check_additional_data_inputs();
-    additional_data_inputs_events();
-    $('#project_list_form').submit(function() {
-    var i = 0;
-    $('input.additional_data').each(function() {
-    $(this).attr('name', 'additional_data[' + i + ']');
-    i++;
-});
-    return true;
-});
-});
+        check_additional_data_inputs();
+        additional_data_inputs_events();
+        $('#project_list_form').submit(function() {
+            var i = 0;
+            $('input.required_additional_data').each(function() {
+                $(this).attr('name', 'required_additional_data[' + i + ']');
+                i++;
+            });
+            return true;
+        });
+    });
 
     function check_additional_data_inputs() {
-    var last_val = $('input.additional_data').last().val();
-    var additional_data_inputs_count = $('input.additional_data').length;
-    if (last_val != '') {
-    add_additional_data_input();
-} else if ($($('input.additional_data').get(additional_data_inputs_count - 2)).val() == '') {
-    remove_additional_data_input();
-}
-}
+        var last_val = $('input.required_additional_data').last().val();
+        var additional_data_inputs_count = $('input.required_additional_data').length;
+        if (last_val != '') {
+            add_additional_data_input();
+        } else if ($($('input.required_additional_data').get(additional_data_inputs_count - 2)).val() == '') {
+            remove_additional_data_input();
+        }
+    }
 
     function add_additional_data_input() {
-    $('#additional_data_holder').append('<input class="additional_data" type="text" value="" />');
-    additional_data_inputs_events();
-}
+        $('#required_additional_data_holder').append('<input class="required_additional_data" type="text" value="" />');
+        additional_data_inputs_events();
+    }
 
     function additional_data_inputs_events() {
-    $('input.additional_data').unbind('keyup');
-    $('input.additional_data').keyup(function() {
-    check_additional_data_inputs();
-});
-}
+        $('input.required_additional_data').unbind('keyup');
+        $('input.required_additional_data').keyup(function() {
+            check_additional_data_inputs();
+        });
+    }
 
     function remove_additional_data_input() {
-    if ($('input.additional_data').length > 1) {
-    $('input.additional_data').last().remove();
-}
-}
+        if ($('input.required_additional_data').length > 1) {
+            $('input.required_additional_data').last().remove();
+        }
+    }
 
 
 
 </script>
 <style>
-input.required_photo
-{
-	display: block;
-	margin-bottom: 5px;
-}
-input.additional_data {
-    display: block;
-    margin-bottom: 5px;
-}
+    input.required_photo
+    {
+        display: block;
+        margin-bottom: 5px;
+    }
+    input.required_additional_data {
+        display: block;
+        margin-bottom: 5px;
+    }
 
 </style>

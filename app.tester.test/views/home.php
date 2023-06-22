@@ -93,23 +93,7 @@
 			</div>
 			<?php
 				}
-				/*
-				foreach($day_notifications[$day] as $notification)
-				{
-			?>
-			<a href="/clients/notification/<?=$notification['Notification']['id']?>" class="app_list_item app_list_alert_small <?=$notification['Notification']['status']?>">
-				<span class="app_list_item_prepend">
-					<span class="fas <?=($notification['Notification']['status'] == 'finished' ? 'fa-exclamation-circle' : 'fa-exclamation-triangle')?>"></span>
-				</span>
-				<div class="double_row">
-					<b><?=$notification['Notification']['title']?></b><br />
-					<?=$notification['Notification']['content']?>
-				</div>
-				<div class="arrow_right"></div>
-			</a>
-			<?php
-				}
-				*/
+
 			}else
 			{
 			?>

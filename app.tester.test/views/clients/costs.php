@@ -9,27 +9,25 @@
 			</span>
 		</span>
 	</a>
-	
-	<a class="app_list_item">
-		VWI
-		<span class="app_list_item_append">
-			<span class="app_list_item_checkbox <?=($client['Client']['vwi'] == 1 ? 'checked' : '')?>" id="vwi">
+
+    <?php
+    $required_additional_data = explode('|', $project_list['Project_list']['required_additional_data']);
+    foreach($required_additional_data as $d)
+    {
+
+        ?>
+
+        <a class="app_list_item">
+            <?=$d?>
+            <span class="app_list_item_append">
+<!--			<span class="app_list_item_checkbox --><?php //=($got_additional_data[strtolower($d)] > 0 ? 'ghosted' : '')?><!--" id="mw">-->
 				<span class="app_list_item_checkbox_cursor"></span>
-			</span>
-		</span>
-	</a>
-	
-	<a class="app_list_item">
-		Overlengte
-		<span class="app_list_item_append">
-			<span class="app_list_item_checkbox <?=($client['Client']['overlengte'] <> 0 ? 'checked' : '')?>" id="ol">
-				<span class="app_list_item_checkbox_cursor"></span>
-			</span>
-		</span>
-	</a>
-	<a class="app_list_item" id="ol_input_holder" style="display: <?=($client['Client']['overlengte'] <> 0 ? '' : 'none')?>; ">
-		<input class="app_list_item_text_input" type="number" placeholder="<?=tl('Vul een lengte in')?>" value="<?=($client['Client']['overlengte'] <> 0 ? (float)$client['Client']['overlengte'] : '')?>" />
-	</a>
+            <?=$d?>
+        </a>
+
+        <?php
+    }
+    ?>
 	
 	<a class="app_list_item">
 		Meerwerk
@@ -130,8 +128,7 @@ $(document).ready(function()
 		
 		if(!error)
 		{
-			//location.reload(true);
-			
+
 			console.log(gs, vwi, ol, mw, ol_val, mw_val);
 			
 			var fd = new FormData();

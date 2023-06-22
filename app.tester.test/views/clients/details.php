@@ -87,42 +87,6 @@
 <?php
 	if($userLoggedIn['Worker']['show_photos'] == 1)
 	{
-		/*
-		$photos = array();
-		$files = scandir('files');
-		foreach($files as $file)
-		{
-			if($file != '.' && $file != '..' && $file != 'photo.jpg')
-			{
-				$pathinfo = pathinfo($file);
-				$ext = strtolower($pathinfo['extension']);
-				if($ext == 'jpg')
-				{
-					$photos[] = $file;
-				}
-			}
-		}
-		if(count($photos) > 0)
-		{
-?>
-<div class="app_list" id="list_photos">
-	<div class="app_list_header">
-		<?=tl('Fotos')?>
-	</div>
-	<div class="app_photo_holder">
-<?php
-			foreach($photos as $photo)
-			{
-?>
-<img class="open_full_screen" src="/files/<?=$photo?>?<?=time()?>" />
-<?php
-			}
-?>
-	</div>
-</div>
-<?php
-		}
-		*/
 		if(count($photos) > 0)
 		{
 ?>
