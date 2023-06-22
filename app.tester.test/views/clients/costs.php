@@ -10,21 +10,20 @@
 		</span>
 	</a>
 
+
+<!--    $required_additional_data = explode('|', $project_list['Project_list']['required_additional_data']);-->
     <?php
-    $required_additional_data = explode('|', $project_list['Project_list']['required_additional_data']);
+    $required_additional_data = explode('|', $project_list['Project_list']['required_photos']);
     foreach($required_additional_data as $d)
     {
 
         ?>
-
-        <a class="app_list_item">
-           Dit is additional_data: <?=$d['type']?>
-            <span class="app_list_item_append">
-			<span class="app_list_item_checkbox <?=($d['checked']  == 1 ? 'checked' : '')?>" id="gs">
-				<span class="app_list_item_checkbox_cursor"></span>
+        <a rel="<?=strtolower($d)?>" class="app_list_item_checkbox <?=(strtolower($d))?>">
+		<span class="app_list_item_checkbox_cursor">
+			<span class="far fa-dot-circle"></span>
+		</span>
             <?=$d?>
         </a>
-
         <?php
     }
     ?>
