@@ -142,65 +142,7 @@
 			}
 		}
 	?>
-	
-	<!--
-	<a href="/pdf?filename=/files/1234 ab 1 - sterkte nieuw.pdf" class="app_list_item">
-		<span class="app_list_item_prepend">
-			<span class="far fa-file"></span>
-		</span>
-		2394XL11 - Schets van een ding
-	</a>
-	
-	<div class="app_list_header">
-		De Genestetstraat
-	</div>
-	
-	<a href="/" class="app_list_item">
-		<span class="app_list_item_prepend">
-			<span class="far fa-file"></span>
-		</span>
-		Genestetstraat - Bouwtekening
-	</a>
-	
-	<div class="app_list_header">
-		<?=tl('Overige documenten')?>
-	</div>
-	
-	<a href="/" class="app_list_item">
-		<span class="app_list_item_prepend">
-			<span class="far fa-file"></span>
-		</span>
-		G-12 sterktebeproeving (2020-07-17 09-40-27)
-	</a>
-	
-	<a href="/" class="app_list_item">
-		<span class="app_list_item_prepend">
-			<span class="far fa-file"></span>
-		</span>
-		G-12 sterktebeproeving (2020-07-17 09-40-27)
-	</a>
-	
-	<a href="/" class="app_list_item">
-		<span class="app_list_item_prepend">
-			<span class="far fa-file"></span>
-		</span>
-		G-12 sterktebeproeving (2020-07-17 09-40-27)
-	</a>
-	
-	<a href="/" class="app_list_item">
-		<span class="app_list_item_prepend">
-			<span class="far fa-file"></span>
-		</span>
-		G-12 sterktebeproeving (2020-07-17 09-40-27)
-	</a>
-	
-	<a href="/" class="app_list_item">
-		<span class="app_list_item_prepend">
-			<span class="far fa-file"></span>
-		</span>
-		G-12 sterktebeproeving (2020-07-17 09-40-27)
-	</a>
-	-->
+
 </div>
 
 <div style="clear: both;"></div>

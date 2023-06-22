@@ -1,6 +1,6 @@
 
 <div class="app_list">
-	
+
 	<a class="app_list_item">
 		Gasstopper
 		<span class="app_list_item_append">
@@ -18,7 +18,7 @@
         ?>
 
         <a class="app_list_item">
-            <?=$d?>
+           Dit is d:  <?=$d?>
             <span class="app_list_item_append">
 <!--			<span class="app_list_item_checkbox --><?php //=($got_additional_data[strtolower($d)] > 0 ? 'ghosted' : '')?><!--" id="mw">-->
 				<span class="app_list_item_checkbox_cursor"></span>
