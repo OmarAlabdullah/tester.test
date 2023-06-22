@@ -13,20 +13,15 @@
 
 <!--    $required_additional_data = explode('|', $project_list['Project_list']['required_additional_data']);-->
     <?php
-    $required_additional_data = explode('|', $project_list['Project_list']['required_photos']);
+    $required_additional_data = explode('|', $project_list['Project_list']['required_additional_data']);
     foreach($required_additional_data as $d)
     {
-
-        ?>
-        <a rel="<?=strtolower($d)?>" class="app_list_item_checkbox <?=(strtolower($d))?>">
-		<span class="app_list_item_checkbox_cursor">
-			<span class="far fa-dot-circle"></span>
-		</span>
-            <?=$d?>
-        </a>
-        <?php
+    ?>
+        d: <?=$d?> <span class="app_list_item_checkbox_cursor"> <?=$d?></span>
+    <?php
     }
     ?>
+
 	
 	<a class="app_list_item">
 		Meerwerk
