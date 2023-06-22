@@ -11,7 +11,23 @@
 	<div class="app_list_header">
 		<?=tl('Kies een foto type')?>
 	</div>
-	
+<!--	//////////////////////////////////////////////////////////-->
+    <?php
+    $required_additional_data = explode('|', $project_list['Project_list']['required_additional_data']);
+    foreach($required_additional_data as $d)
+    {
+
+        ?>
+        <a rel="<?=strtolower($d)?>" class="app_list_item photo_type <?=($got_photos[strtolower($d)] > 0 ? 'ghosted' : '')?>">
+		<span class="app_list_item_prepend">
+			<span class="far fa-dot-circle"></span>
+		</span>
+            <?=$d?>
+        </a>
+        <?php
+    }
+    ?>
+<!--    ////////////////////////////////////////////////////////////-->
 	<?php
 		$required_photos = explode('|', $project_list['Project_list']['required_photos']);
 		foreach($required_photos as $required_photo)
