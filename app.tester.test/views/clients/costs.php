@@ -2,38 +2,28 @@
 <div class="app_list">
 
 	<a class="app_list_item">
-<!--		test: --><?php //=($project_list['Project_list']['required_additional_data'])?>
-<!--		<span class="app_list_item_append">-->
-<!--			<span class="app_list_item_checkbox --><?php //=($project_list['Project_list']['required_additional_data'])?><!--" id="gs">-->
-<!--				<span class="app_list_item_checkbox_cursor"></span>-->
-<!--			</span>-->
-<!--		</span>-->
-        <?php
-        $required_photos = explode('|', $project_list['Project_list']['required_photos']);
-        foreach($required_photos as $required_photo)
-        {
-
-            ?>
-            <a class="app_list_item">
-                <?=$required_photo?>
-            </a>
-            <?php
-        }
-        ?>
+		Gasstopper
+		<span class="app_list_item_append">
+			<span class="app_list_item_checkbox <?=($client['Client']['gas_stop'] == 1 ? 'checked' : '')?>" id="gs">
+				<span class="app_list_item_checkbox_cursor"></span>
+			</span>
+		</span>
 	</a>
 
-
-<!--    $required_additional_data = explode('|', $project_list['Project_list']['required_additional_data']);-->
     <?php
-    $required_additional_data = explode('|', $project_list['Project_list']['required_additional_data']);
-    foreach($required_additional_data as $d)
+    $required_photos = explode('|', $project_list['Project_list']['required_photos']);
+    foreach($required_photos as $required_photo)
     {
-    ?>
-        d: <?=$d?> <span class="app_list_item_checkbox_cursor"> <?=$d?></span>
-    <?php
+
+        ?>
+        <a rel="<?=strtolower($required_photo)?>" class="app_list_item" <?=($got_photos[strtolower($required_photo)] > 0 ? 'ghosted' : '')?>" >
+		<span class="app_list_item_checkbox" id="gs">
+		</span>
+            <?=$required_photo?>
+        </a>
+        <?php
     }
     ?>
-
 	
 	<a class="app_list_item">
 		Meerwerk
