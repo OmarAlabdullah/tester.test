@@ -2,12 +2,27 @@
 <div class="app_list">
 
 	<a class="app_list_item">
-		test: <?=($project_list['Project_list']['required_additional_data'])?>
-		<span class="app_list_item_append">
-			<span class="app_list_item_checkbox <?=($project_list['Project_list']['required_additional_data'])?>" id="gs">
-				<span class="app_list_item_checkbox_cursor"></span>
-			</span>
+<!--		test: --><?php //=($project_list['Project_list']['required_additional_data'])?>
+<!--		<span class="app_list_item_append">-->
+<!--			<span class="app_list_item_checkbox --><?php //=($project_list['Project_list']['required_additional_data'])?><!--" id="gs">-->
+<!--				<span class="app_list_item_checkbox_cursor"></span>-->
+<!--			</span>-->
+<!--		</span>-->
+        <?php
+        $required_photos = explode('|', $project_list['Project_list']['required_photos']);
+        foreach($required_photos as $required_photo)
+        {
+
+            ?>
+            <a rel="<?=strtolower($required_photo)?>" class="app_list_item photo_type <?=($got_photos[strtolower($required_photo)] > 0 ? 'ghosted' : '')?>">
+		<span class="app_list_item_prepend">
+			<span class="far fa-dot-circle"></span>
 		</span>
+                <?=$required_photo?>
+            </a>
+            <?php
+        }
+        ?>
 	</a>
 
 
