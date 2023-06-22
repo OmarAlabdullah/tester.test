@@ -11,21 +11,7 @@
 	<div class="app_list_header">
 		<?=tl('Kies een foto type')?>
 	</div>
-<!--	//////////////////////////////////////////////////////////-->
-    <?php
-    $required_additional_data = explode('|', $project_list['Project_list']['required_additional_data']);
-    foreach($required_additional_data as $d)
-    {
 
-        ?>
-        <a >
-
-            <?=$d?>
-        </a>
-        <?php
-    }
-    ?>
-<!--    ////////////////////////////////////////////////////////////-->
 	<?php
 		$required_photos = explode('|', $project_list['Project_list']['required_photos']);
 		foreach($required_photos as $required_photo)

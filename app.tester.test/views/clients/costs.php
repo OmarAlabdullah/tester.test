@@ -1,37 +1,28 @@
 
 <div class="app_list">
 
-	<a class="app_list_item">
-		Gasstopper
-		<span class="app_list_item_append">
-			<span class="app_list_item_checkbox <?=($project_list['Project_list']['required_additional_data'])?>" id="gs">
-				<span class="app_list_item_checkbox_cursor"></span>
-			</span>
-
-		</span>
-        <?=($project_list['Project_list']['required_additional_data'])?>
-	</a>
-
+    <!--	//////////////////////////////////////////////////////////-->
+    <a class="app_list_item">
     <?php
     $required_additional_data = explode('|', $project_list['Project_list']['required_additional_data']);
     foreach($required_additional_data as $d)
     {
 
         ?>
-        <a rel="<?=strtolower($d)?>" class="app_list_item photo_type <?=($got_additional_data[strtolower($d)] > 0 ? 'ghosted' : '')?>">
-		<span class="app_list_item_prepend">
-			<span class="far fa-dot-circle"></span>
-		</span>
+        <span class="app_list_item_append">
+			<span class="app_list_item_checkbox <?=(strlen($d['Client']['meerwerk']) > 0 ? 'checked' : '')?>" id="gs">
+				<span class="app_list_item_checkbox_cursor"></span>
+			</span>
             <?=$d?>
-        </a>
-
+		</span>
 
 
 
         <?php
     }
     ?>
-	
+    </a>
+    <!--    ////////////////////////////////////////////////////////////-->
 	<a class="app_list_item">
 		Meerwerk
 		<span class="app_list_item_append">
