@@ -20,7 +20,8 @@
         <a class="app_list_item">
            Dit is d:  <?=$d?>
             <span class="app_list_item_append">
-<!--			<span class="app_list_item_checkbox --><?php //=($got_additional_data[strtolower($d)] > 0 ? 'ghosted' : '')?><!--" id="mw">-->
+			<span class="app_list_item_checkbox <?=($project_list['Project_list']['required_additional_data'][strtolower($d)]  == 1 ? 'checked' : '')?>" id="mw">
+			<span class="app_list_item_checkbox <?=($project_list['Project_list']['required_additional_data'][1]  == 1 ? 'checked' : '')?>" id="mw">
 				<span class="app_list_item_checkbox_cursor"></span>
             <?=$d?>
         </a>
